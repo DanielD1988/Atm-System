@@ -8,33 +8,33 @@ namespace Atm_System
 {
     class Customer
     {
-        private String pinNumber;
-        private string name;
-        private double balance;
         public Customer()
         {
-            pinNumber = "1111";
-            name = "John Smith";
-            balance = 0;
         }
-        public bool checkPin(String pin)
-        {
-            if (string.Equals(pinNumber, pin))
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-        }
+        //set and get
+        public string name { get; set; }
+        public string pinNumber { get; set; }
+        public double balance { get; set; }
+        
         public void setBalance(double balance)
         {
             this.balance = balance;
         }
-        public double getBalnace()
+        public double getBalance()
         {
             return balance;
+        }
+        public string getPin()
+        {
+            return pinNumber;
+        }
+        public string recipt()
+        {
+            string print = "";
+            print += "Account Name: " + name +"\n";
+            print += "Account Number: xxxxxxxxxx" + "\n";
+            print += "Account Number: " + balance + "\n";
+            return print;
         }
     }
 }

@@ -1,8 +1,10 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -93,20 +95,20 @@ namespace Atm_System
 
         private void enter_Click(object sender, EventArgs e)
         {
-            Customer customer = new Customer();
-            
-            if (customer.checkPin(textBox1.Text))
+            string jsonString = File.ReadAllText("C:\\Users\\danny\\OneDrive\\Desktop\\C#\\Atm-System\\customerData.json");
+            List<Customer> customer = JsonConvert.DeserializeObject<List<Customer>>(jsonString);//make customer objects from string
+            foreach (Customer pin in customer)
             {
-                Menu menu = new Menu(customer);//pass customer object that has matching pin to menu system
-                MenuGui gui = new MenuGui();
-                this.Hide();
-                gui.ShowDialog();
-                this.Close();
+                if (string.Equals(pin.getPin(), textBox1.Text))
+                {
+                    Menu menu = new Menu(pin);//pass customer object that has matching pin to menu system
+                    MenuGui gui = new MenuGui(pin);
+                    this.Hide();
+                    gui.ShowDialog();
+                    this.Close();
+                }
             }
-            else
-            {
-                textBox1.Text = null;
-            }
+            MessageBox.Show("Invalid pin");
         }
     }
 }
