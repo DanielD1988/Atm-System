@@ -16,9 +16,9 @@ namespace Atm_System
         {
             cust = customer;
         }
-        
         public string getBalance()
         {
+            EnterPin form = new EnterPin();
             return "" + cust.getBalance();
         }
         
@@ -40,10 +40,6 @@ namespace Atm_System
         {
             double cash = Convert.ToDouble(amount);
             cust.setBalance(cust.getBalance() + cash);
-        }
-        public void saveCustomersState()
-        {
-
         }
     }
 }

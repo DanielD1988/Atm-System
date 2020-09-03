@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Atm_System
 {
-    public partial class Form1 : Form
+    public partial class ConfirmCard : Form
     {
-        public Form1()
+        public ConfirmCard()
         {
             InitializeComponent();
         }
@@ -23,7 +23,7 @@ namespace Atm_System
         }
         public void openNextPage()
         {
-            Form2 newForm = new Form2();
+            EnterPin newForm = new EnterPin();
             this.Hide();
             newForm.ShowDialog();
             this.Close();
