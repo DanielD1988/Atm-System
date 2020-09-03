@@ -1,6 +1,6 @@
 ﻿namespace Atm_System
 {
-    partial class Form2
+    partial class EnterPin
     {
         /// <summary>
         /// Required designer variable.

@@ -12,9 +12,12 @@ using System.Windows.Forms;
 
 namespace Atm_System
 {
-    public partial class Form2 : Form
+    public partial class EnterPin : Form
     {
-        public Form2()
+        static string jsonString = File.ReadAllText("C:\\Users\\danny\\OneDrive\\Desktop\\C#\\Atm-System\\customerData.json");
+        private List<Customer> customer = JsonConvert.DeserializeObject<List<Customer>>(jsonString);//make customer objects from string
+       // private List<Customer> customer;
+        public EnterPin()
         {
             InitializeComponent();
         }
@@ -95,8 +98,6 @@ namespace Atm_System
 
         private void enter_Click(object sender, EventArgs e)
         {
-            string jsonString = File.ReadAllText("C:\\Users\\danny\\OneDrive\\Desktop\\C#\\Atm-System\\customerData.json");
-            List<Customer> customer = JsonConvert.DeserializeObject<List<Customer>>(jsonString);//make customer objects from string
             foreach (Customer pin in customer)
             {
                 if (string.Equals(pin.getPin(), textBox1.Text))

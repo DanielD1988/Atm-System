@@ -17,7 +17,6 @@ namespace Atm_System
         {
             InitializeComponent();
             this.customer = cust;
-            
         }
         private void button2_Click(object sender, EventArgs e)
         {
@@ -42,6 +41,12 @@ namespace Atm_System
             this.Hide();
             dept.ShowDialog();
             this.Close();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Exiting ATM\nPlease take your card");
+            Application.Exit();
         }
     }
 }

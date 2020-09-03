@@ -1,6 +1,6 @@
 ﻿namespace Atm_System
 {
-    partial class Form1
+    partial class ConfirmCard
     {
         /// <summary>
         /// Required designer variable.
