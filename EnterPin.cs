@@ -30,11 +30,7 @@ namespace Atm_System
             }
 
         }
-        public void checkPin()
-        {
-
-        }
-
+       
         private void num1_Click(object sender, EventArgs e)
         {
             textBox1.Text += "1";
