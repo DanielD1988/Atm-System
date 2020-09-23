@@ -33,10 +33,5 @@ namespace Atm_System
             gui.ShowDialog();
             this.Close();
         }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-            
-        }
     }
 }

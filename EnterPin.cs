@@ -16,7 +16,7 @@ namespace Atm_System
     {
         static string jsonString = File.ReadAllText("C:\\Users\\danny\\OneDrive\\Desktop\\C#\\Atm-System\\customerData.json");
         private List<Customer> customer = JsonConvert.DeserializeObject<List<Customer>>(jsonString);//make customer objects from string
-       // private List<Customer> customer;
+      
         public EnterPin()
         {
             InitializeComponent();
@@ -30,11 +30,7 @@ namespace Atm_System
             }
 
         }
-        public void checkPin()
-        {
-
-        }
-
+       
         private void num1_Click(object sender, EventArgs e)
         {
             textBox1.Text += "1";

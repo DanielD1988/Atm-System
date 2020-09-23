@@ -11,7 +11,7 @@ namespace Atm_System
         public Customer()
         {
         }
-        //set and get
+        //set and get customer data from Json file
         public string name { get; set; }
         public string pinNumber { get; set; }
         public double balance { get; set; }
