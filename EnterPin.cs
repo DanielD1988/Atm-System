@@ -16,7 +16,7 @@ namespace Atm_System
     {
         static string jsonString = File.ReadAllText("C:\\Users\\danny\\OneDrive\\Desktop\\C#\\Atm-System\\customerData.json");
         private List<Customer> customer = JsonConvert.DeserializeObject<List<Customer>>(jsonString);//make customer objects from string
-       // private List<Customer> customer;
+      
         public EnterPin()
         {
             InitializeComponent();
